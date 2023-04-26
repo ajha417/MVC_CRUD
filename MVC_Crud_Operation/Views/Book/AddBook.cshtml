@@ -38,6 +38,13 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+        @if (TempData["msg"] != null)
+        {
+            <script>
+                alert('@TempData["msg"].ToString();');
+                window.location.href = "@Url.Action("Index","Book")";
+            </script>
+        }
     </div>
 </div>
 

@@ -74,10 +74,11 @@ namespace MVC_Crud_Operation.Controllers
             if (res)
             {
                 TempData["msg"] = "Data deleted successfully!!!";
+                
             }
             else
             {
-                TempData["msg"] = "Couldn't delete...";
+                TempData["msg"] = "Couldnot delete...";
             }
             return View();
         }

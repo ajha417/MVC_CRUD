@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace MVC_Crud_Operation.Models
 {
@@ -121,8 +122,10 @@ namespace MVC_Crud_Operation.Models
 
         public bool delete(BooksModel bmodel)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM Books_tbl WHERE bookid=@bookid", connection);
+            SqlCommand command = new SqlCommand("DELETE FROM Books_tbl WHERE bookId=@bookid", connection);
             command.Parameters.AddWithValue("@bookid", bmodel.bookid);
+            
+            connection.Open();
             int i = command.ExecuteNonQuery();
             if (i >= 1)
             {

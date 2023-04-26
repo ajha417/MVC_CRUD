@@ -1,0 +1,58 @@
+﻿@model MVC_Crud_Operation.Models.BooksModel
+
+@{
+    ViewData["Title"] = "DeleteBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DeleteBook</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BooksModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookprice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookprice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.author)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.publication)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.publication)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteBook">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+    @if (TempData["msg"] != null)
+    {
+        <script>
+            alert('@TempData["msg"].ToString()');
+            window.location.href = "@Url.Action("Index","Book")";
+        </script>
+    }
+</div>
