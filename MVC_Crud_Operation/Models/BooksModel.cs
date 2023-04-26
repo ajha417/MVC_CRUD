@@ -119,5 +119,19 @@ namespace MVC_Crud_Operation.Models
             }
         }
 
+        public bool delete(BooksModel bmodel)
+        {
+            SqlCommand command = new SqlCommand("DELETE FROM Books_tbl WHERE bookid=@bookid", connection);
+            command.Parameters.AddWithValue("@bookid", bmodel.bookid);
+            int i = command.ExecuteNonQuery();
+            if (i >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
