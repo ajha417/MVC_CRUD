@@ -11,8 +11,8 @@ namespace MVC_Crud_Operation.Models
 
 
         [Required]
-        [DisplayName("Id")]
-        public int Id { get; set; }
+        [DisplayName("bookid")]
+        public int bookid { get; set; }
 
         [Required]
         [DisplayName("Enter book name")]
@@ -46,11 +46,58 @@ namespace MVC_Crud_Operation.Models
             {
                 lst.Add(new BooksModel
                 {
-
-                })
+                    bookid = Convert.ToInt32(dr["bookid"].ToString()),
+                    bookname = dr["bookname"].ToString(),
+                    bookprice = Convert.ToInt32(dr["bookprice"].ToString()),
+                    author = dr["price"].ToString(),
+                    publication = dr["publication"].ToString()
+                });
             }
             return lst;
         }
+
+        public BooksModel getData(string id)
+        {
+            BooksModel bmodel = new BooksModel();
+            SqlCommand command = new SqlCommand("SELECT * FROM Books_tbl WHERE bookid='" + id + "'", connection);
+            connection.Open();
+            SqlDataReader dr = command.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while(dr.Read())
+                {
+                    bmodel.bookid = Convert.ToInt32(dr["bookid"].ToString());
+                    bmodel.bookname = dr["bookname"].ToString();
+                    bmodel.bookprice = Convert.ToInt32(dr["bookprice"].ToString());
+                    bmodel.author = dr["author"].ToString();
+                    bmodel.publication = dr["publication"].ToString();
+                }
+            }
+            return bmodel;
+        }
+
+
+        //code to insert data
+        public bool insert(BooksModel bmodel)
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO Books_tbl VALUES(@bookname,@bookprice,@author,@publication)", connection);
+            command.Parameters.AddWithValue("@bookname", bmodel.bookname);
+            command.Parameters.AddWithValue("@bookprice", Convert.ToInt32(bmodel.bookprice));
+            command.Parameters.AddWithValue("@author", bmodel.author);
+            command.Parameters.AddWithValue("@publication", bmodel.publication);
+            connection.Open();
+            int i = command.ExecuteNonQuery();
+            if(i >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
 
     }
 }
