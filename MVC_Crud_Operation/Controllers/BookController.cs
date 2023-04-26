@@ -58,5 +58,28 @@ namespace MVC_Crud_Operation.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult DeleteBook(string id)
+        {
+            BooksModel bmodel = booksmodel.getData(id);
+            return View(bmodel);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteBook(BooksModel book)
+        {
+            BooksModel bmodel = new BooksModel();
+            bool res = bmodel.delete(book);
+            if (res)
+            {
+                TempData["msg"] = "Data deleted successfully!!!";
+            }
+            else
+            {
+                TempData["msg"] = "Couldn't delete...";
+            }
+            return View();
+        }
     }
 }
