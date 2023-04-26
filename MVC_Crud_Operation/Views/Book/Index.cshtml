@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVC_Crud_Operation.Models.BooksModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="AddBook">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.bookid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bookname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bookprice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.publication)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.publication)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.bookid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.bookid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

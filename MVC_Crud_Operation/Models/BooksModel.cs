@@ -49,7 +49,7 @@ namespace MVC_Crud_Operation.Models
                     bookid = Convert.ToInt32(dr["bookid"].ToString()),
                     bookname = dr["bookname"].ToString(),
                     bookprice = Convert.ToInt32(dr["bookprice"].ToString()),
-                    author = dr["price"].ToString(),
+                    author = dr["author"].ToString(),
                     publication = dr["publication"].ToString()
                 });
             }

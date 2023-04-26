@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\SIXTH SEM\Dot net\Programs\Final_Exams\MVC_Crud_Operation\MVC_Crud_Operation
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/SIXTH SEM/Dot net/Programs/Final_Exams/MVC_Crud_Operation/MVC_Crud_Operation/Views/Book/AddBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGRCb29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SIXTH SEM/Dot net/Programs/Final_Exams/MVC_Crud_Operation/MVC_Crud_Operation/Views/Book/EditBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0Qm9vay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SIXTH SEM/Dot net/Programs/Final_Exams/MVC_Crud_Operation/MVC_Crud_Operation/Views/Book/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/SIXTH SEM/Dot net/Programs/Final_Exams/MVC_Crud_Operation/MVC_Crud_Operation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
