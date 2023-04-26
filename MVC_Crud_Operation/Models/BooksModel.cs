@@ -98,6 +98,26 @@ namespace MVC_Crud_Operation.Models
         }
 
 
+        //code to update data
+        public bool update(BooksModel bmodel)
+        {
+            SqlCommand command = new SqlCommand("UPDATE Books_tbl SET bookname=@bookname,bookprice=@bookprice,author=@author,publication=@publication WHERE bookid=@bookid", connection);
+            command.Parameters.AddWithValue("@bookid",bmodel.bookid);
+            command.Parameters.AddWithValue("@bookname", bmodel.bookname);
+            command.Parameters.AddWithValue("@bookprice", Convert.ToInt32(bmodel.bookprice));
+            command.Parameters.AddWithValue("@author", bmodel.author);
+            command.Parameters.AddWithValue("@publication", bmodel.publication);
+            connection.Open();
+            int i = command.ExecuteNonQuery();
+            if (i >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
