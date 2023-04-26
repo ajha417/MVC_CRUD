@@ -50,8 +50,8 @@
                 @Html.DisplayFor(modelItem => item.publication)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.bookid }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.bookid })
+                @Html.ActionLink("Edit", "EditBook", new { id=item.bookid }) |
+                @Html.ActionLink("Delete", "DeleteBook", new { id=item.bookid })
             </td>
         </tr>
 }
